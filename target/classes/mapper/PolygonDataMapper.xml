@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="kopo.poly.mapper.IPolygonDataMapper">
+
+	<!-- 폴리곤 데이터 넣기 -->
+	<insert id="insertPolygonData" parameterType="PolygonDataDTO">
+		INSERT INTO POLYGON_DATA (polygon_name, coordinates, created_at, centroid, pnu)
+		VALUES ( #{polygonName}, #{coordinates, jdbcType=LONGVARCHAR}, NOW(), #{centroid, jdbcType=LONGVARCHAR}, #{pnu})
+	</insert>
+
+	<!-- 구분 -->
+
+	<!-- 솔루션 데이터 넣기 -->
+	<insert id="insertSolData" parameterType="SolDTO">
+		INSERT INTO SOL (created_at, solution)
+		VALUES ( NOW(), #{solution, jdbcType=LONGVARCHAR})
+	</insert>
+
+	<!-- 기록 리스트 쿼리 -->
+	<select id="getSolList" resultType="SolDTO">
+		select S.id, S.created_at, S.solution
+		from SOL S
+		order by S.created_at desc
+	</select>
+
+	<!--기록 내용 상세보기 -->
+	<select id="getSolInfo" resultType="SolDTO">
+		select S.id, S.created_at, S.solution
+		from SOL S
+		where S.id = #{id}
+		order by S.created_at desc
+	</select>
+
+	<!-- 기록 삭제 -->
+	<delete id="deleteSolInfo" parameterType="SolDTO">
+		delete from SOL
+		where id =#{id}
+	</delete>
+
+</mapper>

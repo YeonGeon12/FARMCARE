@@ -1,0 +1,125 @@
+/*
+	Table Responsive
+	===================
+	Author: https://github.com/pablorgarcia
+ */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color: #A7A1AE;
+    background-color: #1F2739;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 300;
+    line-height: 1em;
+    text-align: center;
+    color: #4DC3FA;
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height: 1em;
+    padding-bottom: 2em;
+    color: #FB667A;
+}
+
+h2 a {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FB667A;
+    text-decoration: none;
+}
+
+.text-primary { color: #185875; }
+.text-highlight { color: #FFF842; }
+
+.divTable.minimalistBlack {
+    background-color: #CFCFCF;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    display: table;
+    table-layout: fixed;
+}
+
+.divTable.minimalistBlack .divTableCell, .divTable.minimalistBlack .divTableHead {
+    padding: 5px 4px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.divTable.minimalistBlack .divTableBody .divTableCell {
+    font-size: 13px;
+    word-wrap: break-word;
+}
+
+.divTable.minimalistBlack .divTableHeading {
+    background: #CFCFCF;
+    background: -moz-linear-gradient(to top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+    background: -webkit-linear-gradient(to top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+    background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+    display: table-header-group;
+}
+
+.divTable.minimalistBlack .divTableHeading .divTableHead {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+}
+
+.divTable.minimalistBlack .divTableRow {
+    display: table-row;
+}
+
+.divTable.minimalistBlack .divTableFoot {
+    display: table-footer-group;
+}
+
+.divTable.minimalistBlack .divTableBody {
+    display: table-row-group;
+}
+
+.minimalistBlack .tableFootStyle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.divTableCell:first-child { color: #000000; }
+
+.divTableRow:hover {
+    background-color: #464A52;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.divTableCell:hover {
+    background-color: #68f6c4;
+    color: #000000;
+
+    box-shadow: #68f6c4 -1px 1px, #68f6c4 -2px 2px, #68f6c4 -3px 3px, #68f6c4 -4px 4px, #68f6c4 -5px 5px, #68f6c4 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: linear;
+}
+
+@media (max-width: 800px) {
+    .divTableCell:nth-child(4),
+    .divTableHead:nth-child(4) { display: none; }
+}
